@@ -5,7 +5,7 @@ import type { EmailFormProps } from "./types.ts";
 import { toast } from "sonner";
 
 const useEmailForm = () => {
-    const { handleSubmit, register, formState: { isSubmitting, errors } } = useForm({
+    const { handleSubmit, register, reset, formState: { isSubmitting, errors } } = useForm({
         resolver: zodResolver(emailFormSchema),
         defaultValues: {
             name: "",
@@ -26,6 +26,7 @@ const useEmailForm = () => {
             });
 
             if (res.ok) {
+                reset();
                 toast.success("Thank you for message!", { position: "top-center" });
             } else {
                 toast.error("Something went wrong...", { position: "top-center" });

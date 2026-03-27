@@ -19,7 +19,7 @@ export default function EmailForm() {
                         </div>
                     </Field>
                     <Field className="mt-3 md:mt-0">
-                        <FieldLabel>Email</FieldLabel>
+                        <FieldLabel>Your Email</FieldLabel>
                         <div>
                             <Input {...register("email")} type="email" placeholder="john.doe@gmail.com" />
                             <FieldError>{errors.email?.message}</FieldError>
