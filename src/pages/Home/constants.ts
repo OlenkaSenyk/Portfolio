@@ -20,7 +20,7 @@ export const projects: ProjectCardProps[] = [
     },
     {
         id: "SiriusBot",
-        img: "public/projects/sirius_bot.PNG",
+        img: "/projects/sirius_bot.PNG",
         title: "Sirius Bot",
         badge: "ARCHIVED",
         description: "Telegram bot for adopting or donating pets",

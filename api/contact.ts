@@ -8,13 +8,28 @@ export async function POST(req: Request) {
         const { name, email, message } = await req.json();
 
         const data = await resend.emails.send({
-            from: email,
+            from: "Portfolio <onboarding@resend.dev>",
             to: "olena.senyk16@gmail.com",
             subject: "Message from Portfolio website",
-            text: `
-            Name: ${name}\n
-            Email: ${email}\n\n
-            Message: ${message}
+            replyTo: email,
+            html: `
+                <div style="padding: 20px; background: #f9f9f9;">
+                    <div style="max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px;">
+                        <h2 style="margin-bottom: 10px;">📩 New Message</h2>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <div style="margin-top: 20px;">
+                            <p><strong>Message:</strong></p>
+                            <p style="background: #f1f1f1; padding: 10px; border-radius: 5px;">
+                                ${message}
+                            </p>
+                        </div>
+                        <hr style="margin: 20px 0;" />
+                        <p style="font-size: 12px; color: gray;">
+                            Sent from portfolio website 🚀
+                        </p>
+                    </div>
+                </div>
             `,
         });
         return Response.json({ success: true, data });

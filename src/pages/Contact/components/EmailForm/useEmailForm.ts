@@ -25,8 +25,6 @@ const useEmailForm = () => {
                 }),
             });
 
-            console.log(values);
-
             if (res.ok) {
                 toast.success("Thank you for message!", { position: "top-center" });
             } else {
