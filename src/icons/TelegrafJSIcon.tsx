@@ -1,0 +1,36 @@
+import type {SVGAttributes} from "react";
+
+export default function TelegrafJSIcon({width, height, className}: SVGAttributes<SVGSVGElement>) {
+    return (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlnsXlink="http://www.w3.org/1999/xlink" 
+            viewBox="-250 -250 500 500"
+            width={width}
+            height={height}
+            className={className}
+        >
+            <defs>
+                <path id="inner-rhombus" d="M 0 0 l -86.6 -50 l 86.6 -50 l 86.6 50 z" />
+            </defs>
+            <use xlinkHref="#three-lines" opacity=".5" transform="rotate(60)" />
+
+            <g stroke="#606060" strokeWidth="6">
+                <use xlinkHref="#inner-rhombus" fill="#ffffff" />
+                <use xlinkHref="#inner-rhombus" fill="#c6c6c6" transform="rotate(-120)" />
+                <use xlinkHref="#inner-rhombus" fill="#919191" transform="rotate(+120)" />
+            </g>
+            <polygon 
+                stroke="#e74625" 
+                strokeWidth="12"
+                fillOpacity="0"
+                points="0,-200 173.2,-100 173.2,100 0,200 -173.2,100 -173.2,-100"
+            />
+            <g id="three-lines" stroke="#e74625" strokeWidth="12">
+                <line x1="-173.2" y1="-100" />
+                <line x1="+173.2" y1="-100" />
+                <line y1="200" />
+            </g>
+        </svg>
+    )
+}
