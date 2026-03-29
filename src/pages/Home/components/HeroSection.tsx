@@ -9,16 +9,20 @@ export default function HeroSection({ isMobile, className }: { isMobile: boolean
     return (
         <div className={cn("flex flex-col-reverse justify-center items-center gap-5 md:flex-row lg:gap-20", className)}>
             <div className="text-center md:text-left">
-                <TypographyH1 text="Hi! I'm Olena, a Software Engineer" />
+                <TypographyH1 text="Welcome to My Digital Playground" />
                 <p className="mt-5 text-lg">I like building fascinating, high-performance web-applications.</p>
                 <p className="text-lg">Let's create something cool together!</p>
                 <div className="mt-7 flex flex-col md:flex-row gap-2 ">
-                    <Button>
-                        <Link to="/about">View About Me</Link>
-                    </Button>
-                    <Button variant="outline">
-                        <Link to="/contact">Get In Touch</Link>
-                    </Button>
+                    <Link to="/about" className="flex">
+                        <Button className="grow">
+                            View About Me
+                        </Button>
+                    </Link>
+                    <Link to="/contact"  className="flex">
+                        <Button variant="outline" className="grow">
+                            Get In Touch
+                        </Button>
+                    </Link>
                 </div>
             </div>
             <ImageSection width={isMobile ? 250 : 380} height={isMobile ? 290 : 440} img={img_url} />
